@@ -1,0 +1,12 @@
+{
+  "name": "crypto-marketplace",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GabrielCastilhoV/crypto-marketplace.git"
+  },
+  "author": "Gabriel Castilho",
+  "license": "MIT",
+  "keywords": ["crypto", "nft"]
+}
