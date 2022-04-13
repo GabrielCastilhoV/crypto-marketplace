@@ -80,5 +80,8 @@ export const utils: ConfigType.Utils = {
   }),
   align: (value: PropertyValue<'alignItems'>) => ({
     alignItems: value
+  }),
+  flexDir: (value: PropertyValue<'flexDirection'>) => ({
+    flexDirection: value
   })
 }

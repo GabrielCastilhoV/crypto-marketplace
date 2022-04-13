@@ -7,7 +7,7 @@ export const globalStyles = globalCss({
     border: `none`,
     boxSizing: `border-box`
   },
-  'body, button': {
+  'body, button, input, select, textarea': {
     fontFamily: `$body`
   },
   body: {
@@ -16,5 +16,15 @@ export const globalStyles = globalCss({
   },
   'h1, h2, h3, h4, h5, h6': {
     color: `$white`
+  },
+  '@media (max-width: 1440px)': {
+    html: {
+      fontSize: '93.75%'
+    }
+  },
+  '@media (max-width: 1024px)': {
+    html: {
+      fontSize: '87.5%'
+    }
   }
 })
