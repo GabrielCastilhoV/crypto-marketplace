@@ -35,6 +35,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.17.9",
+    "@babel/preset-env": "^7.16.11",
     "@storybook/addon-essentials": "^6.4.20",
     "@storybook/addon-links": "^6.4.20",
     "@storybook/builder-webpack5": "^6.4.20",
