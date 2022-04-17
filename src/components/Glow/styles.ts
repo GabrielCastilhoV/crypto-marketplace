@@ -19,6 +19,8 @@ export const Wrapper = styled('div', {
         bg: '$pink100'
       },
       blue: {
+        w: '180px',
+        h: '180px',
         bg: 'linear-gradient(135deg, $purple400 0%, $navy_blue100 100%)'
       }
     },
