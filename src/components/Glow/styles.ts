@@ -5,6 +5,7 @@ export type GlowVariants = Stitches.VariantProps<typeof Wrapper>
 
 export const Wrapper = styled('div', {
   position: 'absolute',
+  zIndex: '-1',
   br: '$full',
   w: '120px',
   h: '120px',

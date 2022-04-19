@@ -13,6 +13,7 @@ export const Button = styled('button', {
   h: 36,
   borderRadius: '16px',
   padding: '$2 $3',
+  fontWeight: '$bold',
 
   color: '$white',
   bg: 'rgba(239, 239, 239, 0.1)',
