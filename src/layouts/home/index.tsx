@@ -1,5 +1,5 @@
 import { Header, Navigation } from 'modules'
-import { Card, Glow, Search } from 'components'
+import { Card, Category, Glow, Search } from 'components'
 import { CardMock } from 'components/Card/mock'
 
 import * as S from './styles'
@@ -12,6 +12,8 @@ export const HomeLayout = () => {
       <Header />
 
       <Search />
+
+      <Category />
 
       <S.CardsContainer>
         {CardMock?.map((card, index) => (
