@@ -5,6 +5,7 @@ export const Wrapper = styled('label', {
   borderRadius: '$md',
   background: 'rgba(239, 239, 255, 0.2)',
   padding: '$2 $3',
+  m: '$3 0 $5 0',
 
   display: 'flex',
   alignItems: 'center',

@@ -1,6 +1,7 @@
 import { styled } from 'styles/stitches.config'
 
 export const Wrapper = styled('div', {
+  mt: '$4',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'space-between',
