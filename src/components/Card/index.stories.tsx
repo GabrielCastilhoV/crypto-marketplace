@@ -1,5 +1,4 @@
 import { Meta, Story } from '@storybook/react'
-import { AiOutlineShoppingCart } from 'react-icons/ai'
 
 import { Card } from '.'
 import type { CardProps } from './types'
