@@ -49,7 +49,7 @@ export const Button = styled('button', {
         w: '100%'
       },
       medium: {
-        w: '215px'
+        maxW: '215px'
       },
       small: {
         w: 42,

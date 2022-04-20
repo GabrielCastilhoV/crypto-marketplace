@@ -6,6 +6,6 @@ describe('Header module', () => {
   it('should render correctly', () => {
     render(<Header />)
 
-    expect(screen.getByRole('img')).toBeInTheDocument()
+    expect(screen.getByLabelText(/open menu/i)).toBeInTheDocument()
   })
 })

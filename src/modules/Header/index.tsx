@@ -1,9 +1,14 @@
+import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+
+import { Menu } from 'components'
 
 import * as S from './styles'
 
 export const Header = () => {
+  const [isOpen, setIsOpen] = useState(false)
+
   return (
     <S.Wrapper>
       <Link href="/">
@@ -19,8 +24,16 @@ export const Header = () => {
           height={23}
           alt="Crypto"
           role="button"
+          aria-label="Open Menu"
+          onClick={() => setIsOpen(!isOpen)}
         />
       </S.Menu>
+
+      <Menu
+        handleToggle={setIsOpen}
+        aria-hidden={!isOpen}
+        state={isOpen ? 'open' : 'closed'}
+      />
     </S.Wrapper>
   )
 }
