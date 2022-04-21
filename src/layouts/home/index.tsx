@@ -7,8 +7,8 @@ import * as S from './styles'
 export const HomeLayout = () => {
   return (
     <S.Wrapper>
-      <Glow color="pink" position="top" />
-      <Glow color="blue" position="bottom" />
+      <Glow color="pink" position="top" intensity="medium" />
+      <Glow color="blue" position="bottom" intensity="medium" />
       <Header />
 
       <Category />

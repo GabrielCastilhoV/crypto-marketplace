@@ -7,8 +7,6 @@ export const Wrapper = styled('div', {
   position: 'absolute',
   zIndex: '-1',
   br: '$full',
-  w: '120px',
-  h: '120px',
   filter: 'blur(100px)',
 
   variants: {
@@ -20,8 +18,6 @@ export const Wrapper = styled('div', {
         bg: '$pink100'
       },
       blue: {
-        w: '120px',
-        h: '120px',
         bg: 'linear-gradient(135deg, $purple400 0%, $navy_blue100 100%)'
       }
     },
@@ -31,7 +27,7 @@ export const Wrapper = styled('div', {
         right: 0,
 
         '@lg': {
-          right: '100%'
+          left: 0
         }
       },
       bottom: {
@@ -42,10 +38,34 @@ export const Wrapper = styled('div', {
           right: 0
         }
       }
+    },
+
+    intensity: {
+      normal: {
+        w: '120px',
+        h: '120px',
+
+        '@lg': {
+          w: '160px',
+          h: '160px'
+        },
+
+        '@xxl': {
+          w: '120px',
+          h: '120px',
+          zIndex: '1'
+        }
+      },
+
+      medium: {
+        w: '140px',
+        h: '140px'
+      }
     }
   },
 
   defaultVariants: {
-    color: 'pink'
+    color: 'pink',
+    intensity: 'normal'
   }
 })

@@ -4,12 +4,59 @@ export const Wrapper = styled('div', {
   h: '100vh',
   display: 'flex',
   align: 'center',
-  justify: 'center',
-  flexDir: 'column',
 
   h2: {
     fontSize: '$lg',
     mb: '$4'
+  },
+
+  '@lg': {
+    gap: 100
+  },
+
+  '@xxl': {
+    bg: 'linear-gradient(0deg, rgba(27, 23, 33, 0.6), rgba(27, 23, 33, 0.6)), url(/img/bgImage.png)',
+    backgroundRepeat: 'no-repeat',
+    backgroundAttachment: 'fixed',
+    backgroundPosition: 'center',
+    backgroundSize: 'contain'
+  }
+})
+
+export const Left = styled('div', {
+  '@lg': {
+    w: '50%',
+    h: '100%',
+    maxH: '800px',
+
+    backgroundImage: 'url(/img/bgLogin.png)',
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: 'contain',
+    backgroundAttachment: 'fixed'
+  },
+
+  '@xxl': {
+    display: 'none'
+  }
+})
+
+export const Right = styled('div', {
+  w: '100%',
+  h: '100vh',
+
+  display: 'flex',
+  align: 'center',
+  justify: 'center',
+  flexDir: 'column',
+
+  '@lg': {
+    w: '50%',
+    px: '$10'
+  },
+
+  '@xxl': {
+    w: '50%',
+    m: '0 auto'
   }
 })
 

@@ -9,38 +9,42 @@ import * as S from './styles'
 export const LoginLayout: React.FC = () => {
   return (
     <S.Wrapper>
-      <Glow color="purple" position="top" />
-      <Glow color="purple" position="bottom" />
-      <Image src="/img/logo.svg" width={100} height={100} alt="Crypto" />
+      <S.Left></S.Left>
 
-      <h2>Crypto</h2>
-      <p>The largest NFT marketplace</p>
+      <S.Right>
+        <Glow color="pink" position="top" />
+        <Glow color="purple" position="bottom" />
+        <Image src="/img/logo.svg" width={100} height={100} alt="Crypto" />
 
-      <S.Form>
-        <TextField
-          placeholder="Username"
-          icon={<IoPersonCircleOutline />}
-          radius="top"
-        />
-        <TextField
-          type="password"
-          placeholder="Password"
-          icon={<IoLockOpenOutline />}
-          radius="bottom"
-        />
+        <h2>Crypto</h2>
+        <p>The largest NFT marketplace</p>
 
-        <S.ForgotPassword>
-          <Link href="/">Forgot your password?</Link>
-        </S.ForgotPassword>
+        <S.Form>
+          <TextField
+            placeholder="Username"
+            icon={<IoPersonCircleOutline />}
+            radius="top"
+          />
+          <TextField
+            type="password"
+            placeholder="Password"
+            icon={<IoLockOpenOutline />}
+            radius="bottom"
+          />
 
-        <Button color="secondary">Sign in</Button>
-      </S.Form>
+          <S.ForgotPassword>
+            <Link href="/">Forgot your password?</Link>
+          </S.ForgotPassword>
 
-      <S.Footer>
-        <div className="divider" />
+          <Button color="secondary">Sign in</Button>
+        </S.Form>
 
-        <Button>Sign in with Metamask</Button>
-      </S.Footer>
+        <S.Footer>
+          <div className="divider" />
+
+          <Button>Sign in with Metamask</Button>
+        </S.Footer>
+      </S.Right>
     </S.Wrapper>
   )
 }
