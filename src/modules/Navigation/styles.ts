@@ -6,5 +6,14 @@ export const Wrapper = styled('nav', {
   justifyContent: 'space-evenly',
   h: 80,
   px: '$4',
-  bg: '$bg'
+  bg: '$bg',
+
+  '@lg': {
+    w: 80,
+    h: '100%',
+    flexDir: 'column',
+    justifyContent: 'center',
+    gap: 40,
+    borderRight: '1px solid #2b292e'
+  }
 })

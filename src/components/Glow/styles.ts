@@ -20,19 +20,27 @@ export const Wrapper = styled('div', {
         bg: '$pink100'
       },
       blue: {
-        w: '180px',
-        h: '180px',
+        w: '120px',
+        h: '120px',
         bg: 'linear-gradient(135deg, $purple400 0%, $navy_blue100 100%)'
       }
     },
     position: {
       top: {
         top: 0,
-        right: 0
+        right: 0,
+
+        '@lg': {
+          right: '100%'
+        }
       },
       bottom: {
         bottom: 0,
-        left: 0
+        right: '100%',
+
+        '@lg': {
+          right: 0
+        }
       }
     }
   },

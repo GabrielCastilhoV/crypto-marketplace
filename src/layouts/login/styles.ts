@@ -1,7 +1,7 @@
 import { styled } from 'styles/stitches.config'
 
 export const Wrapper = styled('div', {
-  h: '100%',
+  h: '100vh',
   display: 'flex',
   align: 'center',
   justify: 'center',

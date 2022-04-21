@@ -62,6 +62,16 @@ export const Button = styled('button', {
           w: 20,
           h: 20,
           color: '$white'
+        },
+
+        '@lg': {
+          w: 50,
+          h: 50,
+
+          svg: {
+            w: 26,
+            h: 26
+          }
         }
       }
     }

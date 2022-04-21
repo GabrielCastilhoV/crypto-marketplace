@@ -1,6 +1,13 @@
 import { styled } from 'styles/stitches.config'
 
 export const Wrapper = styled('section', {
-  h: '100vh',
-  px: '$8'
+  w: '100%',
+  maxW: '$xl',
+  m: '0 auto',
+  h: '100%',
+  px: '$8',
+
+  '@lg': {
+    h: '100vh'
+  }
 })

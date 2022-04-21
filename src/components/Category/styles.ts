@@ -2,11 +2,16 @@ import { styled } from 'styles/stitches.config'
 
 export const Wrapper = styled('div', {
   display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
+  align: 'center',
+  justify: 'center',
   gap: '$2',
   flexWrap: 'wrap',
-  my: '$4'
+  my: '$4',
+
+  '@lg': {
+    ml: 50,
+    justify: 'flex-start'
+  }
 })
 
 export const Button = styled('button', {
@@ -27,6 +32,10 @@ export const Button = styled('button', {
 
   '&.active': {
     bg: 'linear-gradient($bg, $bg) padding-box, linear-gradient(135deg, $purple600, $pink600) border-box',
-    border: '2px solid transparent'
+    border: '1px solid transparent'
+  },
+
+  '@lg': {
+    fontSize: '$xs'
   }
 })

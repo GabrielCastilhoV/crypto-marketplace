@@ -2,7 +2,7 @@ import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 
-import { Menu } from 'components'
+import { Menu, Search } from 'components'
 
 import * as S from './styles'
 
@@ -11,11 +11,17 @@ export const Header = () => {
 
   return (
     <S.Wrapper>
-      <Link href="/">
-        <a>
-          <Image src="/img/logo.svg" width={56} height={56} alt="Crypto" />
-        </a>
-      </Link>
+      <div className="logo">
+        <Link href="/">
+          <a>
+            <Image src="/img/logo.svg" width={56} height={56} alt="Crypto" />
+          </a>
+        </Link>
+      </div>
+
+      <S.SearchContainer>
+        <Search />
+      </S.SearchContainer>
 
       <S.Menu>
         <Image

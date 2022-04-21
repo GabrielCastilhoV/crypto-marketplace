@@ -19,6 +19,10 @@ export const Wrapper = styled('label', {
 
   '&:focus-within': {
     boxS: '#CF7AFF 0px 2px 2px 0px;'
+  },
+
+  '@lg': {
+    m: 0
   }
 })
 
