@@ -8,7 +8,7 @@ export default {
   component: User,
   args: {
     name: 'Gabriel',
-    img: '/img/avatar.png'
+    img: '/images/avatar.png'
   }
 } as Meta
 

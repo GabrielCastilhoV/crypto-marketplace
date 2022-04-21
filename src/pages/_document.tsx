@@ -13,7 +13,7 @@ export default class MyDocument extends Document {
             rel="stylesheet"
           />
 
-          <link rel="icon" type="image/png" href="/img/logo.svg" />
+          <link rel="icon" type="image/png" href="/icons/logo.svg" />
 
           <style
             id="stitches"

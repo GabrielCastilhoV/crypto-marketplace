@@ -1,26 +1,26 @@
 export const CardMock = [
   {
-    img: '/img/card1.jpg',
+    img: '/images/card1.jpg',
     price: '1.2 ETH',
     owner: {
       name: 'Hacker',
-      img: '/img/avatar.png'
+      img: '/images/avatar.png'
     }
   },
   {
-    img: '/img/card2.jpg',
+    img: '/images/card2.jpg',
     price: '1.5 ETH',
     owner: {
       name: 'Hacker',
-      img: '/img/avatar.png'
+      img: '/images/avatar.png'
     }
   },
   {
-    img: '/img/card3.jpg',
+    img: '/images/card3.jpg',
     price: '2.0 ETH',
     owner: {
       name: 'Hacker',
-      img: '/img/avatar.png'
+      img: '/images/avatar.png'
     }
   }
 ]

@@ -30,7 +30,7 @@ export const Menu = ({ handleToggle, ...rest }: MenuProps) => {
       <S.Header>
         <Link href="/">
           <a>
-            <Image src="/img/logo.svg" width={56} height={56} alt="Crypto" />
+            <Image src="/icons/logo.svg" width={56} height={56} alt="Crypto" />
           </a>
         </Link>
 
@@ -57,7 +57,7 @@ export const Menu = ({ handleToggle, ...rest }: MenuProps) => {
 
       <S.Profile>
         <div className="user">
-          <User name="Gabriel" img="/img/avatar.png" />
+          <User name="Gabriel" img="/images/avatar.png" />
           <span>Gabriel</span>
         </div>
 

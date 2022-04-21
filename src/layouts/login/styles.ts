@@ -15,7 +15,7 @@ export const Wrapper = styled('div', {
   },
 
   '@xxl': {
-    bg: 'linear-gradient(0deg, rgba(27, 23, 33, 0.6), rgba(27, 23, 33, 0.6)), url(/img/bgImage.png)',
+    bg: 'linear-gradient(0deg, rgba(27, 23, 33, 0.6), rgba(27, 23, 33, 0.6)), url(/images/bgImage.png)',
     backgroundRepeat: 'no-repeat',
     backgroundAttachment: 'fixed',
     backgroundPosition: 'center',
@@ -29,7 +29,7 @@ export const Left = styled('div', {
     h: '100%',
     maxH: '800px',
 
-    backgroundImage: 'url(/img/bgLogin.png)',
+    backgroundImage: 'url(/images/bgLogin.png)',
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'contain',
     backgroundAttachment: 'fixed'

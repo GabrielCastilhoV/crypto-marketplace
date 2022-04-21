@@ -14,7 +14,7 @@ export const LoginLayout: React.FC = () => {
       <S.Right>
         <Glow color="pink" position="top" />
         <Glow color="purple" position="bottom" />
-        <Image src="/img/logo.svg" width={100} height={100} alt="Crypto" />
+        <Image src="/icons/logo.svg" width={100} height={100} alt="Crypto" />
 
         <h2>Crypto</h2>
         <p>The largest NFT marketplace</p>

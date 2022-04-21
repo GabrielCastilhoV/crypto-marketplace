@@ -5,7 +5,7 @@ export const Wrapper = styled('section', {
   position: 'relative',
 
   '@lg': {
-    backgroundImage: 'url(/img/bgImage.png)',
+    backgroundImage: 'url(/images/bgImage.png)',
     backgroundRepeat: 'no-repeat',
     backgroundAttachment: 'fixed',
     backgroundPosition: 'top',
