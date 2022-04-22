@@ -4,5 +4,8 @@
   "parserOptions": {
     "ecmaVersion": 11,
     "sourceType": "module"
+  },
+  "rules": {
+    "@next/next/no-img-element": "off"
   }
 }
