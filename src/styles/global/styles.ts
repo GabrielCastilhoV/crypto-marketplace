@@ -17,14 +17,23 @@ export const globalStyles = globalCss({
   'h1, h2, h3, h4, h5, h6': {
     color: `$white`
   },
+
   '@media (max-width: 1440px)': {
     html: {
       fontSize: '93.75%'
     }
   },
+
   '@media (max-width: 1024px)': {
     html: {
       fontSize: '87.5%'
     }
+  },
+  '::-webkit-scrollbar': {
+    display: 'none'
+  },
+
+  '::-webkit-scrollbar-thumb': {
+    display: 'none'
   }
 })
