@@ -9,7 +9,7 @@ export const HomeLayout = () => {
     <S.Wrapper>
       <Glow color="pink" position="top" intensity="medium" />
       <Glow color="blue" position="bottom" intensity="medium" />
-      <Header />
+      <Header showSearch />
 
       <Category />
 

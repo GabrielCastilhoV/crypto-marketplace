@@ -4,9 +4,10 @@ import Link from 'next/link'
 
 import { Menu, Search } from 'components'
 
+import { HeaderProps } from './types'
 import * as S from './styles'
 
-export const Header = () => {
+export const Header = ({ showSearch = false }: HeaderProps) => {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
@@ -14,18 +15,20 @@ export const Header = () => {
       <div className="logo">
         <Link href="/">
           <a>
-            <Image src="/img/logo.svg" width={56} height={56} alt="Crypto" />
+            <Image src="/icons/logo.svg" width={56} height={56} alt="Crypto" />
           </a>
         </Link>
       </div>
 
-      <S.SearchContainer>
-        <Search />
-      </S.SearchContainer>
+      {showSearch && (
+        <S.SearchContainer>
+          <Search />
+        </S.SearchContainer>
+      )}
 
       <S.Menu>
         <Image
-          src="/img/menu.svg"
+          src="/icons/menu.svg"
           width={23}
           height={23}
           alt="Crypto"

@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 import { Button } from 'components'
 
 import {
@@ -13,11 +15,35 @@ import * as S from './styles'
 export const Navigation = () => {
   return (
     <S.Wrapper>
-      <Button size="small" icon={<IoDiamondOutline />} />
-      <Button size="small" icon={<IoWalletOutline />} />
-      <Button size="small" icon={<IoAddOutline />} color="secondary" />
-      <Button size="small" icon={<IoPulseOutline />} />
-      <Button size="small" icon={<IoPersonCircleOutline />} />
+      <Link href="/" passHref>
+        <a>
+          <Button size="small" icon={<IoDiamondOutline />} />
+        </a>
+      </Link>
+
+      <Link href="/wallet" passHref>
+        <a>
+          <Button size="small" icon={<IoWalletOutline />} />
+        </a>
+      </Link>
+
+      <Link href="/" passHref>
+        <a>
+          <Button size="small" icon={<IoAddOutline />} color="secondary" />
+        </a>
+      </Link>
+
+      <Link href="/ranking" passHref>
+        <a>
+          <Button size="small" icon={<IoPulseOutline />} />
+        </a>
+      </Link>
+
+      <Link href="/profile" passHref>
+        <a>
+          <Button size="small" icon={<IoPersonCircleOutline />} />
+        </a>
+      </Link>
     </S.Wrapper>
   )
 }
