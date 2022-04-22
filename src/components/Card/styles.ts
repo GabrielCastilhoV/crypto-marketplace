@@ -1,11 +1,12 @@
-import { styled } from 'styles/stitches.config'
+import type * as Stitches from '@stitches/react'
+import { styled, keyframes } from 'styles/stitches.config'
+
+export type CardVariants = Stitches.VariantProps<typeof Wrapper>
 
 export const Wrapper = styled('div', {
-  w: 358,
-  h: 358,
   position: 'relative',
   cursor: 'pointer',
-  transition: '$fast',
+  transition: '0.08s ease-in-out',
 
   img: {
     br: '$lg'
@@ -13,6 +14,28 @@ export const Wrapper = styled('div', {
 
   '&:hover': {
     filter: 'brightness(0.8)'
+  },
+
+  variants: {
+    size: {
+      small: {
+        w: 145,
+        h: 145,
+
+        '@lg': {
+          w: 200,
+          h: 200
+        }
+      },
+      normal: {
+        w: 358,
+        h: 358
+      }
+    }
+  },
+
+  defaultVariants: {
+    size: 'normal'
   }
 })
 

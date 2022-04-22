@@ -13,6 +13,6 @@ describe('Card component', () => {
       screen.getByRole('heading', { name: /1.2 ETH/i })
     ).toBeInTheDocument()
 
-    expect(screen.getByRole('img', { name: /hacker/i })).toBeInTheDocument()
+    expect(screen.getAllByRole('img', { name: /hacker/i })).toHaveLength(2)
   })
 })
