@@ -5,10 +5,18 @@ import { User } from 'components'
 import type { CardProps } from './types'
 import * as S from './styles'
 
-export const Card = ({ img, owner, price, hideFooter, ...rest }: CardProps) => {
+export const Card = ({
+  className = '',
+  img,
+  owner,
+  price,
+  hideFooter,
+  ...rest
+}: CardProps) => {
   return (
-    <S.Wrapper {...rest}>
+    <S.Wrapper {...rest} className={className}>
       <Image
+        className="bgCard"
         src={img}
         alt={`A photo of the owner's nft ${owner.name}`}
         layout="fill"

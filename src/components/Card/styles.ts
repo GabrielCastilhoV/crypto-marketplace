@@ -6,14 +6,20 @@ export type CardVariants = Stitches.VariantProps<typeof Wrapper>
 export const Wrapper = styled('div', {
   position: 'relative',
   cursor: 'pointer',
-  transition: '0.08s ease-in-out',
+  overflow: 'hidden',
+  br: '$lg',
 
-  img: {
+  '& .bgCard': {
+    transition: '0.5s linear',
     br: '$lg'
   },
 
   '&:hover': {
-    filter: 'brightness(0.8)'
+    filter: 'brightness(0.8)',
+
+    '& .bgCard': {
+      transform: 'scale(1.1)'
+    }
   },
 
   variants: {

@@ -70,6 +70,11 @@ export const ProfileLayout = ({ ...rest }: ProfileProps) => {
           <S.CardsContainer {...rest}>
             {CardMock?.map((card, index) => (
               <Card
+                className={
+                  isGrid
+                    ? 'animate__animated animate__flipInX'
+                    : 'animate__animated animate__flipInY'
+                }
                 key={index}
                 {...card}
                 hideFooter={isGrid ? true : false}
