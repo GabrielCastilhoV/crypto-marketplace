@@ -1,4 +1,5 @@
 import type { AppProps } from 'next/app'
+import 'animate.css'
 
 import { BaseLayout } from 'layouts'
 import { globalStyles } from 'styles/global'
