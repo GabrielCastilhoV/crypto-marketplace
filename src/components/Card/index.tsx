@@ -7,7 +7,7 @@ import * as S from './styles'
 
 export const Card = ({
   className = '',
-  img,
+  image,
   owner,
   price,
   hideFooter,
@@ -17,16 +17,17 @@ export const Card = ({
     <S.Wrapper {...rest} className={className}>
       <Image
         className="bgCard"
-        src={img}
+        src={image.url}
         alt={`A photo of the owner's nft ${owner.name}`}
         layout="fill"
         objectFit="cover"
+        loading="lazy"
       />
 
       {!hideFooter && (
         <S.Footer>
           <S.Owner>
-            <User img={owner.img} name={owner.name} />
+            <User img={owner.image.url} name={owner.name} />
             <div>
               <span>Owned by</span>
               <h5>{owner.name}</h5>
