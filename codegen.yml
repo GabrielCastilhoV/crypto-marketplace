@@ -1,0 +1,11 @@
+overwrite: true
+schema: 'https://api-sa-east-1.graphcms.com/v2/cl2c4bfor41x601z8a52v9vga/master'
+documents: 'src/graphql/**/*.ts'
+includes: 'src/graphql/**/*.ts'
+generates:
+  src/graphql/generated/schema.tsx:
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-react-apollo
+      - fragment-matcher
