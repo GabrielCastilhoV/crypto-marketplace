@@ -1,10 +1,11 @@
 import { Header, Navigation } from 'modules'
 import { Card, Category, Glow } from 'components'
-import { CardMock } from 'components/Card/mock'
+
+import { GetNftsQuery } from 'graphql/generated/schema'
 
 import * as S from './styles'
 
-export const HomeLayout = () => {
+export const HomeLayout = ({ nfts }: GetNftsQuery) => {
   return (
     <S.Wrapper>
       <Glow color="pink" position="top" intensity="medium" />
@@ -18,7 +19,7 @@ export const HomeLayout = () => {
       </S.NavContainer>
 
       <S.CardsContainer>
-        {CardMock?.map((card, index) => (
+        {nfts?.map((card, index) => (
           <Card key={index} {...card} />
         ))}
       </S.CardsContainer>
