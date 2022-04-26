@@ -1,5 +1,15 @@
+import { Navigation } from 'modules'
+
 import * as S from './styles'
 
 export const BaseLayout = ({ children }) => {
-  return <S.Wrapper>{children}</S.Wrapper>
+  return (
+    <S.Wrapper>
+      <S.NavContainer>
+        <Navigation />
+      </S.NavContainer>
+
+      {children}
+    </S.Wrapper>
+  )
 }

@@ -2,12 +2,22 @@ import { styled } from 'styles/stitches.config'
 
 export const Wrapper = styled('section', {
   w: '100%',
-  maxW: '$xl',
-  m: '0 auto',
   h: '100%',
-  px: '$8',
 
   '@lg': {
-    h: '100vh'
+    display: 'grid',
+    gridTemplateColumns: '80px 1fr'
+  }
+})
+
+export const NavContainer = styled('div', {
+  position: 'fixed',
+  zIndex: '$base',
+  bottom: 0,
+  right: 0,
+  left: 0,
+
+  '@lg': {
+    position: 'unset'
   }
 })

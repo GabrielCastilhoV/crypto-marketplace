@@ -26,21 +26,12 @@ export const Wrapper = styled('div', {
 })
 
 export const Content = styled('div', {
+  maxW: '$xl',
+  m: '0 auto',
+  px: '$8',
+
   '@lg': {
     display: 'flex'
-  }
-})
-
-export const NavContainer = styled('div', {
-  position: 'fixed',
-  bottom: 0,
-  left: 0,
-  right: 0,
-  zIndex: '$base',
-
-  '@lg': {
-    w: '80px',
-    h: '100%'
   }
 })
 

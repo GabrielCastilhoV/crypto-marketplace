@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { IoGridOutline, IoSquareOutline } from 'react-icons/io5'
 
-import { Header, Navigation } from 'modules'
+import { Header } from 'modules'
 import { Button, Card, Glow, User, Historic } from 'components'
 
 import { CardMock } from 'components/Card/mock'
@@ -19,7 +19,6 @@ export const ProfileLayout = ({ ...rest }: ProfileProps) => {
 
       <Glow color="pink" position="top" intensity="medium" />
       <Glow color="blue" position="bottom" intensity="medium" />
-
       <Header />
 
       <S.Content>
@@ -84,10 +83,6 @@ export const ProfileLayout = ({ ...rest }: ProfileProps) => {
           </S.CardsContainer>
         </S.Right>
       </S.Content>
-
-      <S.NavContainer>
-        <Navigation />
-      </S.NavContainer>
     </S.Wrapper>
   )
 }

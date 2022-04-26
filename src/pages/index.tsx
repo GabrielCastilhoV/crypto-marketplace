@@ -1,6 +1,6 @@
 import Head from 'next/head'
 
-import { HomeLayout } from 'layouts'
+import { BaseLayout, HomeLayout } from 'layouts'
 
 import { GET_NFTs } from 'graphql/queries/nfts'
 import { GetNftsQuery } from 'graphql/generated/schema'
@@ -17,7 +17,9 @@ const Home = (props: IHome): JSX.Element => {
         <title>Home | Crypto</title>
       </Head>
 
-      <HomeLayout {...props.data} />
+      <BaseLayout>
+        <HomeLayout {...props.data} />
+      </BaseLayout>
     </>
   )
 }

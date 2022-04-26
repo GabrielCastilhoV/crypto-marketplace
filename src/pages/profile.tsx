@@ -1,7 +1,7 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 
-import { ProfileLayout } from 'layouts'
+import { BaseLayout, ProfileLayout } from 'layouts'
 
 const Profile: NextPage = () => {
   return (
@@ -10,7 +10,9 @@ const Profile: NextPage = () => {
         <title>Profile | Crypto</title>
       </Head>
 
-      <ProfileLayout />
+      <BaseLayout>
+        <ProfileLayout />
+      </BaseLayout>
     </>
   )
 }

@@ -4,6 +4,7 @@ export const Wrapper = styled('div', {
   h: '100vh',
   display: 'flex',
   align: 'center',
+  px: '$8',
 
   h2: {
     fontSize: '$lg',

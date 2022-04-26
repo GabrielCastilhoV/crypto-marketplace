@@ -10,7 +10,7 @@ export const Wrapper = styled('nav', {
 
   '@lg': {
     w: 80,
-    h: '100%',
+    h: '100vh',
     flexDir: 'column',
     justifyContent: 'center',
     gap: 40,
