@@ -14,6 +14,12 @@ export const Wrapper = styled('nav', {
     flexDir: 'column',
     justifyContent: 'center',
     gap: 40,
-    borderRight: '1px solid #2b292e'
+    borderRight: '1px solid #2b292e',
+
+    position: 'fixed',
+    zIndex: '$base',
+    bottom: 0,
+    right: 0,
+    left: 0
   }
 })
