@@ -15,7 +15,7 @@ type NavigationRoutes = {
 
 export const navigationRoutes: NavigationRoutes[] = [
   {
-    title: 'Home',
+    title: '',
     url: '/',
     icon: <IoDiamondOutline />,
     color: 'primary'

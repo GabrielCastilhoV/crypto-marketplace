@@ -5,6 +5,8 @@ import { IoMdClose } from 'react-icons/io'
 
 import { User } from '../user'
 
+import { navigationRoutes } from 'utils/constants'
+
 import { MenuProps } from './types'
 import * as S from './styles'
 
@@ -38,21 +40,11 @@ export const Menu = ({ handleToggle, ...rest }: MenuProps) => {
       </S.Header>
 
       <S.MenuNav>
-        <Link href="/" passHref>
-          <S.MenuLink>Feed</S.MenuLink>
-        </Link>
-
-        <Link href="/wallet" passHref>
-          <S.MenuLink>Wallet</S.MenuLink>
-        </Link>
-
-        <Link href="/profile" passHref>
-          <S.MenuLink>Profile</S.MenuLink>
-        </Link>
-
-        <Link href="/ranking" passHref>
-          <S.MenuLink>Ranking</S.MenuLink>
-        </Link>
+        {navigationRoutes.map((item) => (
+          <Link href={item.url} passHref key={item.title}>
+            <S.MenuLink>{item.title}</S.MenuLink>
+          </Link>
+        ))}
       </S.MenuNav>
 
       <S.Profile>
