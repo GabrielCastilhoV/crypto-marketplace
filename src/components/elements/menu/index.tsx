@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { useEffect } from 'react'
 import { IoMdClose } from 'react-icons/io'
 
-import { User } from 'components'
+import { User } from '../user'
 
 import { MenuProps } from './types'
 import * as S from './styles'

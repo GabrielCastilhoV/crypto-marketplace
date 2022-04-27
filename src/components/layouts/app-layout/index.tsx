@@ -2,15 +2,15 @@ import { Navigation } from 'modules'
 
 import * as S from './styles'
 
-type BaseLayoutProps = {
+type AppLayoutProps = {
   children: React.ReactNode
   hasNavigation?: boolean
-} & S.BaseVariants
+} & S.AppVariants
 
-export const BaseLayout = ({
+export const AppLayout = ({
   children,
   hasNavigation = true
-}: BaseLayoutProps) => {
+}: AppLayoutProps) => {
   return (
     <S.Wrapper hasNavigation={hasNavigation ? 'true' : 'false'}>
       {hasNavigation && (

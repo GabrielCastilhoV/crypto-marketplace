@@ -2,11 +2,11 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { IoPersonCircleOutline, IoLockOpenOutline } from 'react-icons/io5'
 
-import { Button, Glow, TextField } from 'components'
+import { Button, Glow, TextField } from 'components/elements'
 
 import * as S from './styles'
 
-export const LoginLayout: React.FC = () => {
+export const LoginView: React.FC = () => {
   return (
     <S.Wrapper>
       <S.Left></S.Left>

@@ -1,6 +1,6 @@
 import { styled, VariantProps } from 'styles/stitches.config'
 
-export type BaseVariants = VariantProps<typeof Wrapper>
+export type AppVariants = VariantProps<typeof Wrapper>
 
 export const Wrapper = styled('section', {
   w: '100%',

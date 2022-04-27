@@ -7,7 +7,7 @@ import { ApolloProvider } from '@apollo/client'
 import { useApollo } from 'utils/apollo'
 
 import { globalStyles } from 'styles/global'
-import { BaseLayout } from 'layouts'
+import { AppLayout } from 'components/layouts'
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   globalStyles()
@@ -18,11 +18,11 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
   const client = useApollo(pageProps.initialApolloState)
 
   return (
-    <BaseLayout hasNavigation={!isLogin}>
+    <AppLayout hasNavigation={!isLogin}>
       <ApolloProvider client={client}>
         <Component {...pageProps} />
       </ApolloProvider>
-    </BaseLayout>
+    </AppLayout>
   )
 }
 

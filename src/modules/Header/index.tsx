@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 
-import { Menu, Search } from 'components'
+import { Menu, Search } from 'components/elements'
 
 import { HeaderProps } from './types'
 import * as S from './styles'

@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-import { User } from 'components'
+import { User } from '../user'
 
 import type { CardProps } from './types'
 import * as S from './styles'

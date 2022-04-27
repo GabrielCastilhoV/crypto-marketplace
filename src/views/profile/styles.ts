@@ -1,7 +1,4 @@
-import type * as Stitches from '@stitches/react'
 import { styled } from 'styles/stitches.config'
-
-export type ProfileVariants = Stitches.VariantProps<typeof CardsContainer>
 
 export const Wrapper = styled('div', {
   h: '100vh',

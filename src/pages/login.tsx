@@ -1,7 +1,7 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 
-import { LoginLayout } from 'layouts'
+import { LoginView } from 'views'
 
 const Login: NextPage = () => {
   return (
@@ -10,7 +10,7 @@ const Login: NextPage = () => {
         <title>Login | Crypto</title>
       </Head>
 
-      <LoginLayout />
+      <LoginView />
     </>
   )
 }

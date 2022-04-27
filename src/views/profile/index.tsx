@@ -2,21 +2,19 @@ import { useState } from 'react'
 import { IoGridOutline, IoSquareOutline } from 'react-icons/io5'
 
 import { Header } from 'modules'
-import { Button, Card, Glow, User, Historic } from 'components'
+import { Button, Card, Glow, User, Historic } from 'components/elements'
 
-import { CardMock } from 'components/Card/mock'
-import { HistoricMock } from 'components/Historic/mock'
+import { CardMock } from 'components/elements/card/mock'
+import { HistoricMock } from 'components/elements/historic/mock'
 
-import { ProfileProps } from './types'
 import * as S from './styles'
 
-export const ProfileLayout = ({ ...rest }: ProfileProps) => {
+export const ProfileView = () => {
   const [isGrid, setIsGrid] = useState(true)
 
   return (
     <S.Wrapper>
       <div className="bgImage" />
-
       <Glow color="pink" position="top" intensity="medium" />
       <Glow color="blue" position="bottom" intensity="medium" />
       <Header />
@@ -66,7 +64,7 @@ export const ProfileLayout = ({ ...rest }: ProfileProps) => {
             </S.IconContainer>
           </S.OrderContainer>
 
-          <S.CardsContainer {...rest}>
+          <S.CardsContainer>
             {CardMock?.map((card, index) => (
               <Card
                 className={

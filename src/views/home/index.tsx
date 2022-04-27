@@ -1,11 +1,11 @@
 import { Header } from 'modules'
-import { Card, Category, Glow } from 'components'
+import { Card, Category, Glow } from 'components/elements'
 
 import type { HomeProps } from 'pages'
 
 import * as S from './styles'
 
-export const HomeLayout = ({ nfts, categories }: HomeProps) => {
+export const HomeView = ({ nfts, categories }: HomeProps) => {
   return (
     <S.Wrapper>
       <Header showSearch />

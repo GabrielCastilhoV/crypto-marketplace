@@ -1,6 +1,6 @@
 import Head from 'next/head'
 
-import { HomeLayout } from 'layouts'
+import { HomeView } from 'views'
 
 import { initializeApollo } from 'utils/apollo'
 
@@ -16,7 +16,7 @@ const Home = (props: HomeProps): JSX.Element => {
         <title>Home | Crypto</title>
       </Head>
 
-      <HomeLayout {...props} />
+      <HomeView {...props} />
     </>
   )
 }
