@@ -1,12 +1,24 @@
-import { styled } from 'styles/stitches.config'
+import { styled, VariantProps } from 'styles/stitches.config'
+
+export type BaseVariants = VariantProps<typeof Wrapper>
 
 export const Wrapper = styled('section', {
   w: '100%',
-  h: '100%',
+  h: '100vh',
 
   '@lg': {
-    display: 'grid',
-    gridTemplateColumns: '80px 1fr'
+    display: 'grid'
+  },
+
+  variants: {
+    hasNavigation: {
+      true: {
+        gridTemplateColumns: '80px 1fr'
+      },
+      false: {
+        gridTemplateColumns: '1fr'
+      }
+    }
   }
 })
 

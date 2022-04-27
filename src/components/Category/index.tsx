@@ -1,10 +1,13 @@
+import { GetAllCategoriesQuery } from 'graphql/generated/schema'
 import { useState } from 'react'
 
 import { CategoryMock } from './mock'
 
 import * as S from './styles'
 
-export const Category = () => {
+export const Category = ({
+  categories: allCategories
+}: GetAllCategoriesQuery) => {
   const [categories, setCategories] = useState([])
 
   return (
@@ -16,7 +19,7 @@ export const Category = () => {
         All
       </S.Button>
 
-      {CategoryMock?.map((category) => (
+      {allCategories?.map((category) => (
         <S.Button
           key={category.name}
           className={categories.includes(category.name) ? 'active' : ''}

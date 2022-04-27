@@ -1,25 +1,22 @@
 import Head from 'next/head'
 
-import { BaseLayout, HomeLayout } from 'layouts'
+import { HomeLayout } from 'layouts'
 
-import { GET_NFTs } from 'graphql/queries/nfts'
-import { GetNftsQuery } from 'graphql/generated/schema'
 import { initializeApollo } from 'utils/apollo'
 
-interface IHome {
-  data: GetNftsQuery
-}
+import { GET_NFTs, GET_CATEGORIES } from 'graphql/queries'
+import { GetNftsQuery, GetAllCategoriesQuery } from 'graphql/generated/schema'
 
-const Home = (props: IHome): JSX.Element => {
+export type HomeProps = GetNftsQuery & GetAllCategoriesQuery
+
+const Home = (props: HomeProps): JSX.Element => {
   return (
     <>
       <Head>
         <title>Home | Crypto</title>
       </Head>
 
-      <BaseLayout>
-        <HomeLayout {...props.data} />
-      </BaseLayout>
+      <HomeLayout {...props} />
     </>
   )
 }
@@ -29,13 +26,18 @@ export default Home
 export async function getServerSideProps() {
   const apolloClient = initializeApollo()
 
-  const { data } = await apolloClient.query<GetNftsQuery>({
+  const { data: nfts } = await apolloClient.query<GetNftsQuery>({
     query: GET_NFTs
+  })
+
+  const { data: categories } = await apolloClient.query<GetAllCategoriesQuery>({
+    query: GET_CATEGORIES
   })
 
   return {
     props: {
-      data,
+      nfts: nfts.nfts,
+      categories: categories.categories,
       initialApolloState: apolloClient.cache.extract()
     }
   }

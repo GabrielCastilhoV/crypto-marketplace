@@ -19,6 +19,12 @@ export const Content = styled('div', {
   px: '$8'
 })
 
+export const CategoryContainer = styled('div', {
+  '@lg': {
+    ml: '$20'
+  }
+})
+
 export const CardsContainer = styled('div', {
   display: 'flex',
   align: 'center',

@@ -6,7 +6,7 @@ export const Wrapper = styled('nav', {
   px: '$4',
 
   position: 'sticky',
-  zIndex: '$base',
+  zIndex: '$overlay',
   top: 0,
   right: 0,
 

@@ -10,7 +10,7 @@ export const Wrapper = styled('div', {
 
   '.verified': {
     position: 'absolute',
-    zIndex: '$base',
+    zIndex: '1',
     bottom: 0,
     right: -5
   }
