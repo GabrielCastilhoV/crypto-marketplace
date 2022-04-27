@@ -1,8 +1,6 @@
 import { GetAllCategoriesQuery } from 'graphql/generated/schema'
 import { useState } from 'react'
 
-import { CategoryMock } from './mock'
-
 import * as S from './styles'
 
 export const Category = ({
