@@ -25,6 +25,17 @@ export const CategoryContainer = styled('div', {
   }
 })
 
+export const SkeletonContainer = styled('div', {
+  w: '100%',
+  maxW: '1200px',
+  m: '0 auto',
+  p: '10px 0 50px 0',
+
+  '@lg': {
+    pt: 30
+  }
+})
+
 export const CardsContainer = styled('div', {
   display: 'flex',
   align: 'center',
@@ -35,6 +46,7 @@ export const CardsContainer = styled('div', {
   overflow: 'auto',
 
   '@lg': {
-    pt: 30
+    pt: 30,
+    pb: 40
   }
 })

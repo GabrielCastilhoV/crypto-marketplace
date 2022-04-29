@@ -1,18 +1,23 @@
-import { GetAllCategoriesQuery } from 'graphql/generated/schema'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
+import { CategoryProps } from './type'
 import * as S from './styles'
 
 export const Category = ({
-  categories: allCategories
-}: GetAllCategoriesQuery) => {
-  const [categories, setCategories] = useState([])
+  allCategories,
+  setAllCategories
+}: CategoryProps) => {
+  const [categories, setCategories] = useState<string>('')
+
+  useEffect(() => {
+    setAllCategories(categories)
+  }, [categories])
 
   return (
     <S.Wrapper>
       <S.Button
         className={categories.length === 0 ? 'active' : ''}
-        onClick={() => setCategories([])}
+        onClick={() => setCategories('')}
       >
         All
       </S.Button>
@@ -21,7 +26,7 @@ export const Category = ({
         <S.Button
           key={category.name}
           className={categories.includes(category.name) ? 'active' : ''}
-          onClick={() => setCategories([category.name])}
+          onClick={() => setCategories(category.name)}
         >
           {category.name}
         </S.Button>

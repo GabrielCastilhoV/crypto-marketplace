@@ -1,10 +1,7 @@
 import { useMemo } from 'react'
-import {
-  ApolloClient,
-  HttpLink,
-  InMemoryCache,
-  NormalizedCacheObject
-} from '@apollo/client'
+import { ApolloClient, HttpLink, NormalizedCacheObject } from '@apollo/client'
+
+import apolloCache from './apolloCache'
 
 let apolloClient: ApolloClient<NormalizedCacheObject>
 
@@ -12,7 +9,7 @@ function createApolloClient() {
   return new ApolloClient({
     ssrMode: typeof window === 'undefined',
     link: new HttpLink({ uri: `${process.env.NEXT_PUBLIC_API}` }),
-    cache: new InMemoryCache()
+    cache: apolloCache
   })
 }
 

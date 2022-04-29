@@ -1,11 +1,14 @@
 import { Header } from 'modules'
 import { Card, Category, Glow } from 'components/elements'
+import { HomeSkeleton } from 'components/layouts'
 
-import type { HomeProps } from 'pages'
+import { useHomeContext } from 'contexts'
 
 import * as S from './styles'
 
-export const HomeView = ({ nfts, categories }: HomeProps) => {
+export const HomeView = () => {
+  const { nfts, isLoading, categories, setAllCategories } = useHomeContext()
+
   return (
     <S.Wrapper>
       <Header showSearch />
@@ -15,14 +18,23 @@ export const HomeView = ({ nfts, categories }: HomeProps) => {
         <Glow color="blue" position="bottom" intensity="medium" />
 
         <S.CategoryContainer>
-          <Category categories={categories} />
+          <Category
+            allCategories={categories}
+            setAllCategories={setAllCategories}
+          />
         </S.CategoryContainer>
 
-        <S.CardsContainer>
-          {nfts?.map((card, index) => (
-            <Card key={index} {...card} />
-          ))}
-        </S.CardsContainer>
+        {isLoading ? (
+          <S.SkeletonContainer>
+            <HomeSkeleton />
+          </S.SkeletonContainer>
+        ) : (
+          <S.CardsContainer>
+            {nfts?.map((card, index) => (
+              <Card key={index} {...card} />
+            ))}
+          </S.CardsContainer>
+        )}
       </S.Content>
     </S.Wrapper>
   )
