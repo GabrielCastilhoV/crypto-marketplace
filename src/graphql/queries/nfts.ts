@@ -1,9 +1,13 @@
-import { gql, useQuery } from '@apollo/client'
-import { GetNftsQuery } from 'graphql/generated/schema'
+import { gql, QueryHookOptions, useQuery } from '@apollo/client'
+import {
+  GetNftsQuery,
+  GetNftsQueryVariables,
+  NftWhereInput
+} from 'graphql/generated/schema'
 
 export const GET_NFTs = gql`
-  query GetNfts {
-    nfts {
+  query GetNfts($first: Int, $skip: Int, $where: NftWhereInput) {
+    nfts(first: $first, skip: $skip, where: $where) {
       id
       price
       image {
@@ -19,9 +23,17 @@ export const GET_NFTs = gql`
         name
       }
     }
+
+    nftsConnection(first: $first, skip: $skip, where: $where) {
+      pageInfo {
+        hasNextPage
+      }
+    }
   }
 `
 
-export function useQueryNfts() {
-  return useQuery<GetNftsQuery>(GET_NFTs)
+export function useQueryNfts(
+  options?: QueryHookOptions<GetNftsQuery, GetNftsQueryVariables>
+) {
+  return useQuery<GetNftsQuery, GetNftsQueryVariables>(GET_NFTs, options)
 }

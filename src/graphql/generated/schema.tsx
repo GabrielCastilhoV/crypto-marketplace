@@ -4522,7 +4522,11 @@ export type GetAllCategoriesQuery = {
   categories: Array<{ __typename?: 'Category'; name: string }>
 }
 
-export type GetNftsQueryVariables = Exact<{ [key: string]: never }>
+export type GetNftsQueryVariables = Exact<{
+  first?: InputMaybe<Scalars['Int']>
+  skip?: InputMaybe<Scalars['Int']>
+  where?: InputMaybe<NftWhereInput>
+}>
 
 export type GetNftsQuery = {
   __typename?: 'Query'
@@ -4538,6 +4542,10 @@ export type GetNftsQuery = {
     } | null
     categories: Array<{ __typename?: 'Category'; name: string }>
   }>
+  nftsConnection: {
+    __typename?: 'NftConnection'
+    pageInfo: { __typename?: 'PageInfo'; hasNextPage: boolean }
+  }
 }
 
 export const GetAllCategoriesDocument = gql`
@@ -4598,8 +4606,8 @@ export type GetAllCategoriesQueryResult = Apollo.QueryResult<
   GetAllCategoriesQueryVariables
 >
 export const GetNftsDocument = gql`
-  query GetNfts {
-    nfts {
+  query GetNfts($first: Int, $skip: Int, $where: NftWhereInput) {
+    nfts(first: $first, skip: $skip, where: $where) {
       id
       price
       image {
@@ -4613,6 +4621,11 @@ export const GetNftsDocument = gql`
       }
       categories {
         name
+      }
+    }
+    nftsConnection(first: $first, skip: $skip, where: $where) {
+      pageInfo {
+        hasNextPage
       }
     }
   }
@@ -4630,6 +4643,9 @@ export const GetNftsDocument = gql`
  * @example
  * const { data, loading, error } = useGetNftsQuery({
  *   variables: {
+ *      first: // value for 'first'
+ *      skip: // value for 'skip'
+ *      where: // value for 'where'
  *   },
  * });
  */

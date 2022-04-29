@@ -1,4 +1,4 @@
-import { gql, useQuery } from '@apollo/client'
+import { gql, useQuery, QueryHookOptions } from '@apollo/client'
 import { GetAllCategoriesQuery } from 'graphql/generated/schema'
 
 export const GET_CATEGORIES = gql`
@@ -9,6 +9,8 @@ export const GET_CATEGORIES = gql`
   }
 `
 
-export function useQueryCategories() {
-  return useQuery<GetAllCategoriesQuery>(GET_CATEGORIES)
+export function useQueryCategories(
+  options?: QueryHookOptions<GetAllCategoriesQuery>
+) {
+  return useQuery<GetAllCategoriesQuery>(GET_CATEGORIES, options)
 }
