@@ -5,6 +5,7 @@ export type MenuVariants = Stitches.VariantProps<typeof Wrapper>
 
 export const Wrapper = styled('menu', {
   bg: 'rgba(27, 23, 33, 0.9)',
+  h: '100vh',
   position: 'fixed',
   inset: 0,
   zIndex: '$menu',

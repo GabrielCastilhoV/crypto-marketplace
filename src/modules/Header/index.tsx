@@ -18,7 +18,7 @@ export const Header = ({ showSearch = false }: HeaderProps) => {
   }, [])
 
   return (
-    <S.Wrapper className={scrollPosition > 0 ? 'hasScroll' : ''}>
+    <S.Wrapper className={!isOpen && scrollPosition > 0 ? 'hasScroll' : ''}>
       <S.Content>
         <div className="logo">
           <Link href="/">

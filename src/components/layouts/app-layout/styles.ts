@@ -4,9 +4,10 @@ export type AppVariants = VariantProps<typeof Wrapper>
 
 export const Wrapper = styled('section', {
   w: '100%',
-  h: '100vh',
+  h: '100%',
 
   '@lg': {
+    h: '100vh',
     display: 'grid'
   },
 
