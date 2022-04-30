@@ -31,8 +31,7 @@
   },
   "lint-staged": {
     "src/**/*": [
-      "yarn lint --fix",
-      "yarn test"
+      "yarn lint --fix"
     ]
   },
   "devDependencies": {
