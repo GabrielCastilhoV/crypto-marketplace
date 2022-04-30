@@ -5,7 +5,9 @@ import { CategoryMock } from './mock'
 
 describe('Category component', () => {
   it('should render correctly', () => {
-    render(<Category categories={CategoryMock} />)
+    render(
+      <Category allCategories={CategoryMock} setAllCategories={() => {}} />
+    )
 
     expect(screen.getByRole('button', { name: /all/i })).toBeInTheDocument()
   })

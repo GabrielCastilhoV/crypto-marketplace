@@ -9,5 +9,9 @@ export default {
 } as Meta
 
 export const Default: Story = (args) => (
-  <Category categories={CategoryMock} {...args} />
+  <Category
+    allCategories={CategoryMock}
+    setAllCategories={() => {}}
+    {...args}
+  />
 )

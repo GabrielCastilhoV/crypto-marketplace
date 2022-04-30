@@ -12,7 +12,6 @@ describe('Menu component', () => {
   it('should render the navigation links', () => {
     render(<Menu handleToggle={() => jest.fn()} />)
 
-    expect(screen.getByText(/feed/i)).toBeInTheDocument()
     expect(screen.getByText(/wallet/i)).toBeInTheDocument()
     expect(screen.getByText(/profile/i)).toBeInTheDocument()
     expect(screen.getByText(/ranking/i)).toBeInTheDocument()
