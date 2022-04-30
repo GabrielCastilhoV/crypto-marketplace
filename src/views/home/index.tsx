@@ -1,5 +1,5 @@
 import { Header } from 'modules'
-import { Card, Category, Glow } from 'components/elements'
+import { Card, Category, Empty, Glow } from 'components/elements'
 import { HomeSkeleton } from 'components/layouts'
 
 import { useHomeContext } from 'contexts'
@@ -33,6 +33,8 @@ export const HomeView = () => {
             {nfts?.map((card, index) => (
               <Card key={index} {...card} />
             ))}
+
+            {nfts?.length === 0 && <Empty />}
           </S.CardsContainer>
         )}
       </S.Content>

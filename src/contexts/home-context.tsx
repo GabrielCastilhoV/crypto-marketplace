@@ -14,6 +14,7 @@ type HomeContextData = {
   isLoading: boolean
   categories: GetAllCategoriesQuery['categories']
   setAllCategories: React.Dispatch<React.SetStateAction<string>>
+  setTextFilter: React.Dispatch<React.SetStateAction<string>>
 }
 
 export const HomeContext = createContext({} as HomeContextData)
@@ -21,6 +22,7 @@ export const HomeContext = createContext({} as HomeContextData)
 export const HomeProvider: React.FC = ({ children }) => {
   const [allCategories, setAllCategories] = useState<string>()
   const [nfts, setNfts] = useState<GetNftsQuery>()
+  const [textFilter, setTextFilter] = useState<string>('')
   const [isLoading, setIsLoading] = useState(false)
 
   const apolloClient = initializeApollo()
@@ -29,22 +31,34 @@ export const HomeProvider: React.FC = ({ children }) => {
     notifyOnNetworkStatusChange: true
   })
 
+  const whereClause = {
+    AND: [
+      { categories_some: { name_contains: allCategories } },
+      {
+        OR: [
+          { price_contains: textFilter },
+          {
+            owner: {
+              name_contains: textFilter
+            }
+          }
+        ]
+      }
+    ]
+  }
+
   useEffect(() => {
     async function getAllCategories() {
       setIsLoading(true)
 
-      const { data, loading } = await apolloClient.query<
+      const { data } = await apolloClient.query<
         GetNftsQuery,
         GetNftsQueryVariables
       >({
         query: GET_NFTs,
         notifyOnNetworkStatusChange: true,
         variables: {
-          where: {
-            categories_some: {
-              name_contains: allCategories
-            }
-          }
+          where: whereClause
         }
       })
 
@@ -52,7 +66,7 @@ export const HomeProvider: React.FC = ({ children }) => {
       setIsLoading(false)
     }
     getAllCategories()
-  }, [allCategories])
+  }, [allCategories, textFilter])
 
   return (
     <HomeContext.Provider
@@ -60,7 +74,8 @@ export const HomeProvider: React.FC = ({ children }) => {
         isLoading,
         nfts: nfts?.nfts,
         categories: categories?.categories,
-        setAllCategories
+        setAllCategories,
+        setTextFilter
       }}
     >
       {children}
