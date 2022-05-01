@@ -1,7 +1,6 @@
-import type * as Stitches from '@stitches/react'
-import { styled, keyframes } from 'styles/stitches.config'
+import { styled, keyframes, VariantProps } from 'styles/stitches.config'
 
-export type MenuVariants = Stitches.VariantProps<typeof Wrapper>
+export type MenuVariants = VariantProps<typeof Wrapper>
 
 export const Wrapper = styled('menu', {
   bg: 'rgba(27, 23, 33, 0.9)',

@@ -1,7 +1,6 @@
-import type * as Stitches from '@stitches/react'
-import { styled, keyframes } from 'styles/stitches.config'
+import { styled, VariantProps } from 'styles/stitches.config'
 
-export type CardVariants = Stitches.VariantProps<typeof Wrapper>
+export type CardVariants = VariantProps<typeof Wrapper>
 
 export const Wrapper = styled('div', {
   position: 'relative',

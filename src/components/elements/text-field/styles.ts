@@ -1,7 +1,6 @@
-import type * as Stitches from '@stitches/react'
-import { styled } from 'styles/stitches.config'
+import { styled, VariantProps } from 'styles/stitches.config'
 
-export type TextFieldVariants = Stitches.VariantProps<typeof Wrapper>
+export type TextFieldVariants = VariantProps<typeof Wrapper>
 
 export const Wrapper = styled('div', {
   h: 48,

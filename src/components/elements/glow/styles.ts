@@ -1,7 +1,6 @@
-import type * as Stitches from '@stitches/react'
-import { styled } from 'styles/stitches.config'
+import { styled, VariantProps } from 'styles/stitches.config'
 
-export type GlowVariants = Stitches.VariantProps<typeof Wrapper>
+export type GlowVariants = VariantProps<typeof Wrapper>
 
 export const Wrapper = styled('div', {
   position: 'absolute',
