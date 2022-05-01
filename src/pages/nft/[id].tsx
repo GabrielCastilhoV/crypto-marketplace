@@ -1,5 +1,6 @@
 import type { GetStaticProps, GetStaticPaths } from 'next'
 import { useRouter } from 'next/router'
+import Head from 'next/head'
 
 import { NftView } from 'views'
 
@@ -23,7 +24,15 @@ const NftPage = (props: NftPageProps): JSX.Element => {
 
   if (router.isFallback) return null
 
-  return <NftView {...props} />
+  return (
+    <>
+      <Head>
+        <title>{props.name} | Crypto</title>
+      </Head>
+
+      <NftView {...props} />
+    </>
+  )
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
