@@ -12,6 +12,6 @@ export const Wrapper = styled('div', {
     position: 'absolute',
     zIndex: '1',
     bottom: 0,
-    right: -5
+    right: -8
   }
 })

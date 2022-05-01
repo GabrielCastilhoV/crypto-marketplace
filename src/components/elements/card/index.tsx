@@ -4,17 +4,25 @@ import { User } from '../user'
 
 import type { CardProps } from './types'
 import * as S from './styles'
+import { useRouter } from 'next/router'
 
 export const Card = ({
   className = '',
   image,
+  id,
   owner,
   price,
   hideFooter,
   ...rest
 }: CardProps) => {
+  const router = useRouter()
+
   return (
-    <S.Wrapper {...rest} className={className}>
+    <S.Wrapper
+      {...rest}
+      className={className}
+      onClick={() => router.push(`/nft/${id}`)}
+    >
       <Image
         className="bgCard"
         src={image.url}

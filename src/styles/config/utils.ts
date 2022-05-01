@@ -69,6 +69,10 @@ export const utils: ConfigType.Utils = {
   br: (value: PropertyValue<'borderRadius'>) => ({
     borderRadius: value
   }),
+  borderY: (value: PropertyValue<'border'>) => ({
+    borderTop: value,
+    borderBottom: value
+  }),
   boxS: (value: PropertyValue<'boxShadow'>) => ({
     boxShadow: value
   }),
