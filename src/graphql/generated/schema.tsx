@@ -1882,6 +1882,7 @@ export type Nft = Node & {
   createdAt: Scalars['DateTime']
   /** User that created this document */
   createdBy?: Maybe<User>
+  description?: Maybe<Scalars['String']>
   /** Get the document in other stages */
   documentInStages: Array<Nft>
   /** List of Nft versions */
@@ -1889,6 +1890,7 @@ export type Nft = Node & {
   /** The unique identifier */
   id: Scalars['ID']
   image: Asset
+  name: Scalars['String']
   owner?: Maybe<Owner>
   price: Scalars['String']
   /** The time the document was published. Null on documents in draft stage. */
@@ -1977,7 +1979,9 @@ export type NftConnection = {
 export type NftCreateInput = {
   categories?: InputMaybe<CategoryCreateManyInlineInput>
   createdAt?: InputMaybe<Scalars['DateTime']>
+  description?: InputMaybe<Scalars['String']>
   image: AssetCreateOneInlineInput
+  name: Scalars['String']
   owner?: InputMaybe<OwnerCreateOneInlineInput>
   price: Scalars['String']
   updatedAt?: InputMaybe<Scalars['DateTime']>
@@ -2035,6 +2039,25 @@ export type NftManyWhereInput = {
   /** All values that are not contained in given list. */
   createdAt_not_in?: InputMaybe<Array<Scalars['DateTime']>>
   createdBy?: InputMaybe<UserWhereInput>
+  description?: InputMaybe<Scalars['String']>
+  /** All values containing the given string. */
+  description_contains?: InputMaybe<Scalars['String']>
+  /** All values ending with the given string. */
+  description_ends_with?: InputMaybe<Scalars['String']>
+  /** All values that are contained in given list. */
+  description_in?: InputMaybe<Array<Scalars['String']>>
+  /** All values that are not equal to given value. */
+  description_not?: InputMaybe<Scalars['String']>
+  /** All values not containing the given string. */
+  description_not_contains?: InputMaybe<Scalars['String']>
+  /** All values not ending with the given string */
+  description_not_ends_with?: InputMaybe<Scalars['String']>
+  /** All values that are not contained in given list. */
+  description_not_in?: InputMaybe<Array<Scalars['String']>>
+  /** All values not starting with the given string. */
+  description_not_starts_with?: InputMaybe<Scalars['String']>
+  /** All values starting with the given string. */
+  description_starts_with?: InputMaybe<Scalars['String']>
   id?: InputMaybe<Scalars['ID']>
   /** All values containing the given string. */
   id_contains?: InputMaybe<Scalars['ID']>
@@ -2055,6 +2078,25 @@ export type NftManyWhereInput = {
   /** All values starting with the given string. */
   id_starts_with?: InputMaybe<Scalars['ID']>
   image?: InputMaybe<AssetWhereInput>
+  name?: InputMaybe<Scalars['String']>
+  /** All values containing the given string. */
+  name_contains?: InputMaybe<Scalars['String']>
+  /** All values ending with the given string. */
+  name_ends_with?: InputMaybe<Scalars['String']>
+  /** All values that are contained in given list. */
+  name_in?: InputMaybe<Array<Scalars['String']>>
+  /** All values that are not equal to given value. */
+  name_not?: InputMaybe<Scalars['String']>
+  /** All values not containing the given string. */
+  name_not_contains?: InputMaybe<Scalars['String']>
+  /** All values not ending with the given string */
+  name_not_ends_with?: InputMaybe<Scalars['String']>
+  /** All values that are not contained in given list. */
+  name_not_in?: InputMaybe<Array<Scalars['String']>>
+  /** All values not starting with the given string. */
+  name_not_starts_with?: InputMaybe<Scalars['String']>
+  /** All values starting with the given string. */
+  name_starts_with?: InputMaybe<Scalars['String']>
   owner?: InputMaybe<OwnerWhereInput>
   price?: InputMaybe<Scalars['String']>
   /** All values containing the given string. */
@@ -2115,8 +2157,12 @@ export type NftManyWhereInput = {
 export enum NftOrderByInput {
   CreatedAtAsc = 'createdAt_ASC',
   CreatedAtDesc = 'createdAt_DESC',
+  DescriptionAsc = 'description_ASC',
+  DescriptionDesc = 'description_DESC',
   IdAsc = 'id_ASC',
   IdDesc = 'id_DESC',
+  NameAsc = 'name_ASC',
+  NameDesc = 'name_DESC',
   PriceAsc = 'price_ASC',
   PriceDesc = 'price_DESC',
   PublishedAtAsc = 'publishedAt_ASC',
@@ -2127,7 +2173,9 @@ export enum NftOrderByInput {
 
 export type NftUpdateInput = {
   categories?: InputMaybe<CategoryUpdateManyInlineInput>
+  description?: InputMaybe<Scalars['String']>
   image?: InputMaybe<AssetUpdateOneInlineInput>
+  name?: InputMaybe<Scalars['String']>
   owner?: InputMaybe<OwnerUpdateOneInlineInput>
   price?: InputMaybe<Scalars['String']>
 }
@@ -2150,6 +2198,8 @@ export type NftUpdateManyInlineInput = {
 }
 
 export type NftUpdateManyInput = {
+  description?: InputMaybe<Scalars['String']>
+  name?: InputMaybe<Scalars['String']>
   price?: InputMaybe<Scalars['String']>
 }
 
@@ -2225,6 +2275,25 @@ export type NftWhereInput = {
   /** All values that are not contained in given list. */
   createdAt_not_in?: InputMaybe<Array<Scalars['DateTime']>>
   createdBy?: InputMaybe<UserWhereInput>
+  description?: InputMaybe<Scalars['String']>
+  /** All values containing the given string. */
+  description_contains?: InputMaybe<Scalars['String']>
+  /** All values ending with the given string. */
+  description_ends_with?: InputMaybe<Scalars['String']>
+  /** All values that are contained in given list. */
+  description_in?: InputMaybe<Array<Scalars['String']>>
+  /** All values that are not equal to given value. */
+  description_not?: InputMaybe<Scalars['String']>
+  /** All values not containing the given string. */
+  description_not_contains?: InputMaybe<Scalars['String']>
+  /** All values not ending with the given string */
+  description_not_ends_with?: InputMaybe<Scalars['String']>
+  /** All values that are not contained in given list. */
+  description_not_in?: InputMaybe<Array<Scalars['String']>>
+  /** All values not starting with the given string. */
+  description_not_starts_with?: InputMaybe<Scalars['String']>
+  /** All values starting with the given string. */
+  description_starts_with?: InputMaybe<Scalars['String']>
   id?: InputMaybe<Scalars['ID']>
   /** All values containing the given string. */
   id_contains?: InputMaybe<Scalars['ID']>
@@ -2245,6 +2314,25 @@ export type NftWhereInput = {
   /** All values starting with the given string. */
   id_starts_with?: InputMaybe<Scalars['ID']>
   image?: InputMaybe<AssetWhereInput>
+  name?: InputMaybe<Scalars['String']>
+  /** All values containing the given string. */
+  name_contains?: InputMaybe<Scalars['String']>
+  /** All values ending with the given string. */
+  name_ends_with?: InputMaybe<Scalars['String']>
+  /** All values that are contained in given list. */
+  name_in?: InputMaybe<Array<Scalars['String']>>
+  /** All values that are not equal to given value. */
+  name_not?: InputMaybe<Scalars['String']>
+  /** All values not containing the given string. */
+  name_not_contains?: InputMaybe<Scalars['String']>
+  /** All values not ending with the given string */
+  name_not_ends_with?: InputMaybe<Scalars['String']>
+  /** All values that are not contained in given list. */
+  name_not_in?: InputMaybe<Array<Scalars['String']>>
+  /** All values not starting with the given string. */
+  name_not_starts_with?: InputMaybe<Scalars['String']>
+  /** All values starting with the given string. */
+  name_starts_with?: InputMaybe<Scalars['String']>
   owner?: InputMaybe<OwnerWhereInput>
   price?: InputMaybe<Scalars['String']>
   /** All values containing the given string. */
@@ -4533,7 +4621,9 @@ export type GetNftsQuery = {
   nfts: Array<{
     __typename?: 'Nft'
     id: string
+    name: string
     price: string
+    description?: string | null
     image: { __typename?: 'Asset'; url: string }
     owner?: {
       __typename?: 'Owner'
@@ -4609,7 +4699,9 @@ export const GetNftsDocument = gql`
   query GetNfts($first: Int, $skip: Int, $where: NftWhereInput) {
     nfts(first: $first, skip: $skip, where: $where) {
       id
+      name
       price
+      description
       image {
         url
       }

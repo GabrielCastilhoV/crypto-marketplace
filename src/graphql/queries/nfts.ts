@@ -1,15 +1,15 @@
 import { gql, QueryHookOptions, useQuery } from '@apollo/client'
-import {
-  GetNftsQuery,
-  GetNftsQueryVariables,
-  NftWhereInput
-} from 'graphql/generated/schema'
+import { initializeApollo } from 'utils/apollo'
+
+import { GetNftsQuery, GetNftsQueryVariables } from 'graphql/generated/schema'
 
 export const GET_NFTs = gql`
   query GetNfts($first: Int, $skip: Int, $where: NftWhereInput) {
     nfts(first: $first, skip: $skip, where: $where) {
       id
+      name
       price
+      description
       image {
         url
       }
@@ -31,6 +31,20 @@ export const GET_NFTs = gql`
     }
   }
 `
+
+export const BasicQueryNfts = async (variables?: GetNftsQueryVariables) => {
+  const apolloClient = initializeApollo()
+
+  const { data, loading } = await apolloClient.query<
+    GetNftsQuery,
+    GetNftsQueryVariables
+  >({
+    query: GET_NFTs,
+    variables
+  })
+
+  return { data, loading }
+}
 
 export function useQueryNfts(
   options?: QueryHookOptions<GetNftsQuery, GetNftsQueryVariables>

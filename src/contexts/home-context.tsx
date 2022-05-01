@@ -1,13 +1,7 @@
 import { createContext, useContext, useEffect, useState } from 'react'
 
-import { initializeApollo } from 'utils/apollo'
-
-import { GET_NFTs, useQueryCategories } from 'graphql/queries'
-import {
-  GetNftsQuery,
-  GetNftsQueryVariables,
-  GetAllCategoriesQuery
-} from 'graphql/generated/schema'
+import { BasicQueryNfts, useQueryCategories } from 'graphql/queries'
+import { GetNftsQuery, GetAllCategoriesQuery } from 'graphql/generated/schema'
 
 type HomeContextData = {
   nfts: GetNftsQuery['nfts']
@@ -24,8 +18,6 @@ export const HomeProvider: React.FC = ({ children }) => {
   const [nfts, setNfts] = useState<GetNftsQuery>()
   const [textFilter, setTextFilter] = useState<string>('')
   const [isLoading, setIsLoading] = useState(false)
-
-  const apolloClient = initializeApollo()
 
   const { data: categories } = useQueryCategories({
     notifyOnNetworkStatusChange: true
@@ -51,15 +43,8 @@ export const HomeProvider: React.FC = ({ children }) => {
     async function getAllCategories() {
       setIsLoading(true)
 
-      const { data } = await apolloClient.query<
-        GetNftsQuery,
-        GetNftsQueryVariables
-      >({
-        query: GET_NFTs,
-        notifyOnNetworkStatusChange: true,
-        variables: {
-          where: whereClause
-        }
+      const { data } = await BasicQueryNfts({
+        where: whereClause
       })
 
       setNfts(data)
