@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { IoPersonCircleOutline, IoLockOpenOutline } from 'react-icons/io5'
@@ -10,6 +11,9 @@ import * as S from './styles'
 
 export const LoginView: React.FC = () => {
   const { signIn } = useAuthContext()
+
+  const [username, setUsername] = useState('root')
+  const [password, setPassword] = useState('root')
 
   return (
     <S.Wrapper>
@@ -33,6 +37,8 @@ export const LoginView: React.FC = () => {
             placeholder="Username"
             icon={<IoPersonCircleOutline />}
             radius="top"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
             required
           />
           <TextField
@@ -40,6 +46,8 @@ export const LoginView: React.FC = () => {
             placeholder="Password"
             icon={<IoLockOpenOutline />}
             radius="bottom"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
             required
           />
 
