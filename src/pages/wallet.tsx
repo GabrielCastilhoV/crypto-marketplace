@@ -2,6 +2,8 @@ import Head from 'next/head'
 
 import { WalletView } from 'views'
 
+import { withAuth } from 'utils/helpers'
+
 const Wallet = (): JSX.Element => {
   return (
     <>
@@ -15,3 +17,9 @@ const Wallet = (): JSX.Element => {
 }
 
 export default Wallet
+
+export const getServerSideProps = withAuth(async () => {
+  return {
+    props: {}
+  }
+})

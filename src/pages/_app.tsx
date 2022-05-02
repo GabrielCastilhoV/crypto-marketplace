@@ -3,12 +3,13 @@ import 'animate.css'
 
 import { useRouter } from 'next/router'
 
+import { HomeProvider, AuthProvider } from 'contexts'
+
 import { ApolloProvider } from '@apollo/client'
 import { useApollo } from 'utils/apollo'
 
-import { globalStyles } from 'styles/global'
 import { AppLayout } from 'components/layouts'
-import { HomeProvider } from 'contexts'
+import { globalStyles } from 'styles/global'
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   globalStyles()
@@ -19,13 +20,15 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
   const client = useApollo(pageProps.initialApolloState)
 
   return (
-    <AppLayout hasNavigation={!isLogin}>
-      <ApolloProvider client={client}>
-        <HomeProvider>
-          <Component {...pageProps} />
-        </HomeProvider>
-      </ApolloProvider>
-    </AppLayout>
+    <AuthProvider>
+      <AppLayout hasNavigation={!isLogin}>
+        <ApolloProvider client={client}>
+          <HomeProvider>
+            <Component {...pageProps} />
+          </HomeProvider>
+        </ApolloProvider>
+      </AppLayout>
+    </AuthProvider>
   )
 }
 

@@ -2,11 +2,15 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { IoPersonCircleOutline, IoLockOpenOutline } from 'react-icons/io5'
 
+import { useAuthContext } from 'contexts'
+
 import { Button, Glow, TextField } from 'components/elements'
 
 import * as S from './styles'
 
 export const LoginView: React.FC = () => {
+  const { signIn } = useAuthContext()
+
   return (
     <S.Wrapper>
       <S.Left></S.Left>
@@ -19,17 +23,24 @@ export const LoginView: React.FC = () => {
         <h2>Crypto</h2>
         <p>The largest NFT marketplace</p>
 
-        <S.Form>
+        <S.Form
+          onSubmit={(e) => {
+            e.preventDefault()
+            signIn()
+          }}
+        >
           <TextField
             placeholder="Username"
             icon={<IoPersonCircleOutline />}
             radius="top"
+            required
           />
           <TextField
             type="password"
             placeholder="Password"
             icon={<IoLockOpenOutline />}
             radius="bottom"
+            required
           />
 
           <S.ForgotPassword>

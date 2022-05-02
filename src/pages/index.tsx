@@ -2,6 +2,8 @@ import Head from 'next/head'
 
 import { HomeView } from 'views'
 
+import { withAuth } from 'utils/helpers'
+
 const Home = (): JSX.Element => {
   return (
     <>
@@ -15,3 +17,9 @@ const Home = (): JSX.Element => {
 }
 
 export default Home
+
+export const getServerSideProps = withAuth(async () => {
+  return {
+    props: {}
+  }
+})
