@@ -19,22 +19,27 @@ export const CryptoContainer = styled('div', {
 })
 
 export const ProfileContainer = styled('div', {
-  w: '40%',
-  display: 'flex',
-  align: 'center',
-  gap: '1rem',
+  display: 'none',
 
-  h2: {
-    fontSize: '$lg'
-  },
+  '@lg': {
+    w: '40%',
+    display: 'flex',
+    align: 'center',
+    gap: '1rem',
 
-  span: {
-    color: '$pink100'
+    h2: {
+      fontSize: '$lg'
+    },
+
+    span: {
+      color: '$pink100'
+    }
   }
 })
 
 export const Currency = styled('div', {
-  w: '60%',
+  w: '100%',
+
   display: 'block',
   p: '$6 $10',
   position: 'relative',
@@ -57,6 +62,10 @@ export const Currency = styled('div', {
   span: {
     color: '$pink100',
     fontSize: '$sm'
+  },
+
+  '@lg': {
+    w: '60%'
   }
 })
 
