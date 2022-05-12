@@ -10,7 +10,7 @@ export function withAuth<P>(fn: GetServerSideProps<P>) {
     context: GetServerSidePropsContext
   ): Promise<GetServerSidePropsResult<P>> => {
     const cookies = parseCookies(context)
-    const token = cookies['@nextauth.token']
+    const token = cookies['@nextauth.token'] || cookies['@metamask']
 
     if (!token) {
       return {

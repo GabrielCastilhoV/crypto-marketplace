@@ -10,7 +10,7 @@ import { Button, Glow, TextField } from 'components/elements'
 import * as S from './styles'
 
 export const LoginView: React.FC = () => {
-  const { signIn } = useAuthContext()
+  const { signIn, handleConnectWithMetaMask } = useAuthContext()
 
   const [username, setUsername] = useState('root')
   const [password, setPassword] = useState('root')
@@ -61,7 +61,9 @@ export const LoginView: React.FC = () => {
         <S.Footer>
           <div className="divider" />
 
-          <Button>Sign in with Metamask</Button>
+          <Button onClick={handleConnectWithMetaMask}>
+            Sign in with MetaMask
+          </Button>
         </S.Footer>
       </S.Right>
     </S.Wrapper>

@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { useEffect } from 'react'
 import { IoMdClose } from 'react-icons/io'
 
+import { useAuthContext } from 'contexts'
 import { User } from '../user'
 
 import { navigationRoutes } from 'utils/constants'
@@ -11,6 +12,8 @@ import { MenuProps } from './types'
 import * as S from './styles'
 
 export const Menu = ({ handleToggle, ...rest }: MenuProps) => {
+  const { handleDisconnectFromMetaMask } = useAuthContext()
+
   useEffect(() => {
     function handleKeyDown(event: KeyboardEvent) {
       const { key } = event
@@ -53,9 +56,7 @@ export const Menu = ({ handleToggle, ...rest }: MenuProps) => {
           <span>Gabriel</span>
         </div>
 
-        <Link href="/login" passHref>
-          <S.SignOut>Sign out</S.SignOut>
-        </Link>
+        <S.SignOut onClick={handleDisconnectFromMetaMask}>Sign out</S.SignOut>
       </S.Profile>
     </S.Wrapper>
   )

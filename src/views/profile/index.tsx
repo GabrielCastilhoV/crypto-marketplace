@@ -1,9 +1,11 @@
 import { useState } from 'react'
 import { IoGridOutline, IoSquareOutline } from 'react-icons/io5'
 
-import { Header } from 'modules'
-import { Button, Card, Glow, User, Historic } from 'components/elements'
+import { useAuthContext } from 'contexts'
 
+import { Header } from 'modules'
+
+import { Button, Card, Glow, User, Historic } from 'components/elements'
 import { CardMock } from 'components/elements/card/mock'
 import { HistoricMock } from 'components/elements/historic/mock'
 
@@ -11,6 +13,8 @@ import * as S from './styles'
 
 export const ProfileView = () => {
   const [isGrid, setIsGrid] = useState(true)
+
+  const { accountMetamask, activeMetamask } = useAuthContext()
 
   return (
     <S.Wrapper>
@@ -30,7 +34,7 @@ export const ProfileView = () => {
                 isVerified
               />
               <h2>Gabriel</h2>
-              <span>gabriel_castilho</span>
+              <span>{activeMetamask && accountMetamask}</span>
             </S.ProfileContainer>
 
             <S.CryptoContainer>
